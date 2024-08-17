@@ -83,11 +83,21 @@ module.exports = {
     // Useful for deploying to a public network.
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
     polygonAmoy: {
-      provider: () => new HDWalletProvider(MNEMONIC, `https://goerli.infura.io/v3/${PROJECT_ID}`),
-      network_id: 80001,       // Goerli's id
+      provider: () => new HDWalletProvider(MNEMONIC, "https://rpc-amoy.polygon.technology/", { chainId: 80002, pollingInterval: 1800000 }),
+      network_id: 80002,       // amoy's id
       //confirmations: 2,    // # of confirmations to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+      skipDryRun: true,
+      gas: 18500000,
+      gasPrice: 40000000000,    // Skip dry run before migrations? (default: false for public nets )
+      networkCheckTimeout: 9000000,
+      pollingInterval: 1800000,
+      disableConfirmationListener: true,
+      verify: {
+        apiUrl: "https://api-amoy.polygonscan.com/api",
+        apiKey: process.env.POLYGONSCAN_API_KEY,
+        explorerUrl: 'https://amoy.polygonscan.com',
+      },
     },
     //
     // Useful for private networks
@@ -138,4 +148,8 @@ module.exports = {
   //     }
   //   }
   // }
+  plugins: ["truffle-plugin-verify"],
+  api_keys: {
+    polygonScan: process.env.POLYGONSCAN_API_KEY,
+  },
 };
