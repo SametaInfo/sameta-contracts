@@ -2,6 +2,9 @@
   "name": "sameta-nft",
   "version": "0.0.1",
   "description": "Sameta NFT derived from ERC721 to create NFT based virtual identity. ",
+  "authors": [
+    "Akshay Dev"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "truffle test",
