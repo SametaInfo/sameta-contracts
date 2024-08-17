@@ -1,0 +1,25 @@
+{
+  "name": "sameta-nft",
+  "version": "0.0.1",
+  "description": "Sameta NFT derived from ERC721 to create NFT based virtual identity. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "truffle test",
+    "compile": "truffle compile"
+  },
+  "keywords": [
+    "NFT",
+    "ERC721",
+    "Sameta",
+    "Identity",
+    "token"
+  ],
+  "author": "akshaydevh",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^5.0.2",
+    "@openzeppelin/truffle-upgrades": "^1.21.0",
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "dotenv": "^16.4.5"
+  }
+}
