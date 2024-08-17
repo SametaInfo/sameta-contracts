@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "truffle test",
-    "compile": "truffle compile"
+    "compile": "truffle compile",
+    "deploy:polygonAmoy": "truffle migrate --network polygonAmoy",
+    "deploy:polygon": "truffle migrate --network polygon",
+    "verify:polygon": "truffle run verify SametaAvtarV1 --network polygon",
+    "verify:polygonAmoy": "truffle run verify SametaAvtarV1 --network polygonAmoy"
   },
   "keywords": [
     "NFT",
@@ -21,5 +25,8 @@
     "@openzeppelin/truffle-upgrades": "^1.21.0",
     "@truffle/hdwallet-provider": "^2.1.15",
     "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "truffle-plugin-verify": "^0.6.7"
   }
 }
